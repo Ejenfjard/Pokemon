@@ -1,0 +1,387 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("/Img/Pokémon\ background.jpg");
+    background-size: cover;
+    /* Anpassar bakgrundsbilden för att täcka hela elementet */
+    background-position: center;
+    /* Centrerar bakgrundsbilden horisontellt och vertikalt */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Säkerställer att bakgrundsbilden täcker hela sidans höjd */
+
+
+
+
+
+
+
+
+    #pokeGame {
+        display: flex;
+        justify-content: center;
+    }
+
+    .pokeGame-logo {
+        width: 20rem;
+        height: 10rem;
+    }
+
+    #pokemon-gallery-container {
+        width: 80%;
+        height: fit-content;
+        background: rgb(246, 15, 15);
+        background: radial-gradient(circle, rgb(252, 23, 23) 0%, rgb(40, 44, 255) 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        opacity: 0.9;
+
+        .box {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-bottom: 1rem;
+
+        }
+
+        #search-btn {
+            width: 60px;
+            height: 31px;
+            margin-top: 2rem;
+        }
+
+        .search-results {
+            background-color: blue;
+            color: white;
+            height: fit-content;
+            margin-top: 2rem;
+            width: 80px;
+            height: 29px;
+            margin-left: 3px;
+            
+        }
+
+        .search-result-item {
+            color: white;
+        }
+
+        .search-result-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        #list-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem;
+
+
+            .pokemon-h2 {
+                display: flex;
+                justify-content: center;
+                color: white;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 100%;
+            }
+
+
+            .pokemon-image-div {
+                width: 8rem;
+                height: 15rem;
+                transition: transform 0.3s ease;
+                background: rgb(79, 97, 255);
+                background: radial-gradient(circle, rgba(79, 97, 255, 1) 0%, rgba(178, 203, 255, 1) 100%);
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+                opacity: 0.9;
+
+            }
+
+            .details-button {
+                margin-left: 13%;
+                background-color: rgb(0, 116, 231);
+                color: white;
+                border: white 2px solid;
+            }
+
+            .pokemon-image-div:hover {
+                transform: scale(1.1);
+                /* Förstora kortet när det hovras över */
+            }
+
+            /* Justera storleken på andra pokémoner när ett kort hovras över */
+            #content:hover .pokemon-image-div:not(:hover) {
+                transform: scale(0.9);
+                /* Minska storleken på andra kort */
+            }
+
+            .pokemon-image {
+                width: 100%;
+            }
+
+        }
+
+        #load-Pokemons-Btn {
+            width: 190px;
+            height: 40px;
+            font-size: 18px;
+            background-color: rgb(0, 116, 231);
+            color: white;
+            border: white 2px solid;
+            border-radius: 2px;
+
+
+        }
+
+        #loadMoreBtn:hover {
+            background-color: white;
+            color: rgb(0, 116, 231);
+            border-color: rgb(0, 116, 231);
+        }
+
+
+        #search-input {
+            width: 150px;
+            height: 25px;
+            margin-top: 2rem;
+
+        }
+
+
+
+    }
+
+
+
+    #pokemon-details-container {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+
+    }
+
+    .popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(circle, rgb(252, 23, 23) 0%, rgb(40, 44, 255) 100%);
+        border: 1px solid #ccc;
+        padding: 20px;
+        z-index: 9999;
+        border-radius: 1rem;
+        display: none;
+    }
+
+    .popup.show {
+        display: block;
+    }
+
+    .popup-p {
+        font-size: 17px;
+        color: white;
+    }
+
+    #pokemon-card-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #info-popup {
+        display: flex;
+        flex-direction: column;
+        width: 240px;
+        height: 120px;
+        opacity: 0.9;
+    }
+
+    #close-info-popup {
+        color: blue;
+        font-size: 20px;
+    }
+
+    #add-pokemon {
+        color: blue;
+        font-size: 15px;
+    }
+
+
+    .btn-box {
+        display: flex;
+        justify-content: center;
+    }
+
+
+    #go-back-button {
+        width: 60px;
+        height: 50px;
+        margin: 20px;
+    }
+
+    .delete-pokemon-button {
+        width: 50px;
+        height: 30px;
+    }
+
+
+    .pokemon-detail-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        border-radius: 1rem;
+        width: 35%;
+        height: 40%;
+        border: 2px solid blue;
+    }
+
+
+
+    .compare-button {
+        width: 250px;
+        height: 40px;
+        font-size: large;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        border: blue solid 2px;
+        /* Justera margintoppen för utseendeändamål */
+    }
+
+    .highest-value {
+        background-color: lightgreen;
+    }
+
+    .lowest-value {
+        background-color: red;
+    }
+
+
+    .winner-indicator {
+        font-size: 24px;
+        /* Större textstorlek */
+        font-weight: bold;
+        /* Fet stil för att göra den tydligare */
+        color: white;
+        /* Vit färg för att kontrastera med bakgrunden */
+        background-color: green;
+        /* Grön bakgrundsfärg */
+        padding: 8px;
+        /* Lite utfyllnad för att göra texten tydligare */
+        border-radius: 4px;
+        /* Runda kanter för en mjukare look */
+        margin-top: 16px;
+        /* Lägger till lite mellanrum över vinnartexten */
+    }
+
+    .loser-indicator {
+        font-size: 24px;
+        /* Större textstorlek */
+        font-weight: bold;
+        /* Fet stil för att göra den tydligare */
+        color: white;
+        /* Vit färg för att kontrastera med bakgrunden */
+        background-color: rgb(232, 35, 35);
+        /* Grön bakgrundsfärg */
+        padding: 8px;
+        /* Lite utfyllnad för att göra texten tydligare */
+        border-radius: 4px;
+        /* Runda kanter för en mjukare look */
+        margin-top: 16px;
+        /* Lägger till lite mellanrum över vinnartexten */
+    }
+
+    .equal-indicator {
+        font-size: 24px;
+        /* Större textstorlek */
+        font-weight: bold;
+        /* Fet stil för att göra den tydligare */
+        color: white;
+        /* Vit färg för att kontrastera med bakgrunden */
+        background-color: rgb(237, 211, 65);
+        /* Grön bakgrundsfärg */
+        padding: 8px;
+        /* Lite utfyllnad för att göra texten tydligare */
+        border-radius: 4px;
+        /* Runda kanter för en mjukare look */
+        margin-top: 16px;
+        /* Lägger till lite mellanrum över vinnartexten */
+    }
+
+
+    .compare-new-pokemons {
+        color: blue;
+        font-size: 15px;
+        margin: 20px;
+        width: 150px;
+        height: 50px;
+    }
+
+    .pokemon-detail-card>* {
+        margin: 5px;
+        /* Justera mellanrummet efter behov */
+    }
+
+    .pokemon-types {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        width: 50%;
+        /* Justera mellanrummet efter behov */
+    }
+
+    .weight-height {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .pokemon-detail-card img {
+        /* Stilmallar för bilden */
+        max-width: 100%;
+        /* Säkerställer att bilden inte överskrider förälderns bredd */
+        height: auto;
+        /* Behåll bildens proportioner */
+    }
+
+    .pokemon-detail-card ul {
+        list-style-type: none;
+    }
+
+
+    /*Type-colors */
+
+    .normal-type-color {
+        color: #A8A878;
+    }
+
+    .fire-type-color {
+        color: #F08030;
+        /* Fire type color */
+    }
+
+    .water-type-color {
+        color: #145cee;
+        /* Fire type color */
+    }
+
+    .electric-type-color {
+        color: #edd713;
+        /* Fire type color */
+    }
+
+    .grass-type-color {
+        color: #0b931f;
+        /* Fire type color */
+    }
+
+}

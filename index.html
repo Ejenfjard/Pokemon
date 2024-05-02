@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="pokeGame">
+        <img src="/Img/PokéGame_logo.png" alt="PokéGame-logo" class="pokeGame-logo">
+    </div>
+
+
+
+    <div id="pokemon-gallery-container">
+        <div class="box">
+            <input type="text" id="search-input" placeholder="Sök Pokémon">
+            <button id="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <div id="pokemon-card-container">
+            <div id="list-wrapper"></div>
+        </div>
+        <div class="box">
+            <button id="load-Pokemons-Btn">Visa fler Pokémons</button>
+        </div>
+    </div>
+
+    <div id="pokemon-details-container" class="popup" style="display: none;">
+        <button id="close-details-container">&times;</button>
+        <div id="pokemon-card-wrapper">
+            <div id="info-popup" class="popup" style="display: none;">
+                <button id="close-info-popup">&times;</button>
+                <p class="popup-p">Du har valt en Pokémon. <br> Välj en till för att jämföra dessa!</p>
+                <button id="add-pokemon">Lägg till Pokémon</button>
+            </div>
+        </div>
+
+        <div class="btn-box">
+            <button id="go-back-button" style="display: none;">
+                <i class="fas fa-arrow-left" style="font-size: 24px; color: blue;"></i>
+            </button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
